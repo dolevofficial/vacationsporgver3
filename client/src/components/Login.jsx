@@ -17,7 +17,7 @@ export default function Login({ history }) {
     const handleSubmit = async e => {
         e.preventDefault()
         try {
-            let res = await fetch("https://e6xpl.sse.codesandbox.io/users/login", {
+            let res = await fetch("/users/login", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify({ username, password })

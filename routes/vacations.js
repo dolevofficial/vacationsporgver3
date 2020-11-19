@@ -59,6 +59,7 @@ router.get("/", async (req, res) => {
     try {
         let q = `SELECT * FROM vacations `
         let vacations = await Query(q)
+        console.log(vacations)
         res.json(vacations)
     } catch (error) {
         res.sendStatus(500)

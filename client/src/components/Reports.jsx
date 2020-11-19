@@ -19,7 +19,7 @@ export default function Reports({ history }) {
         } else {
             (async () => {
                 try {
-                    let res = await fetch("https://e6xpl.sse.codesandbox.io/orders/reports", {
+                    let res = await fetch("/orders/reports", {
                         method: "POST",
                         headers: { "content-type": "application/json", "Authorization": localStorage.token }
                     })
@@ -90,7 +90,7 @@ export default function Reports({ history }) {
 // let chartInfo;
 // (async () => {
 //     try {
-//         let res = await fetch("https://e6xpl.sse.codesandbox.io/orders/reports", {
+//         let res = await fetch("/orders/reports", {
 //             method: "POST",
 //             headers: { "content-type": "application/json", "Authorization": localStorage.token }
 //         })

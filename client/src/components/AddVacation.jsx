@@ -31,7 +31,7 @@ export default function AddVacation({ history }) {
                 formData.append("arv", arv)
                 formData.append("price", price)
                 formData.append("picture", picture)
-                const url = "https://e6xpl.sse.codesandbox.io/vacations/add";
+                const url = "/vacations/add";
                 let res = await fetch(url, {
                     method: "POST",
                     headers: { "Authorization": localStorage.token },

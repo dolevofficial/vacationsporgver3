@@ -31,7 +31,7 @@ export default function EditVacation({ match, history }) {
                     formData.append("price", price)
                     formData.append("newpicture", pictureFile)
                     formData.append("oldpicture", picture)
-                    const url = "https://e6xpl.sse.codesandbox.io/vacations/" + match.params.id;
+                    const url = "/vacations/" + match.params.id;
                     let res = await fetch(url, {
                         method: "PUT",
                         headers: { "Authorization": localStorage.token },
@@ -41,7 +41,7 @@ export default function EditVacation({ match, history }) {
                     console.log(data)
                     history.push("/")
                 } else {
-                    let res = await fetch("https://e6xpl.sse.codesandbox.io/vacations/" + match.params.id, {
+                    let res = await fetch("/vacations/" + match.params.id, {
                         method: "PUT",
                         headers: { "content-type": "application/json", "Authorization": localStorage.token },
                         body: JSON.stringify({ descrip, dest, dept, arv, price })
@@ -61,7 +61,7 @@ export default function EditVacation({ match, history }) {
             history.push("/")
         }
         (async () => {
-            let res = await fetch("https://e6xpl.sse.codesandbox.io/vacations/" + match.params.id)
+            let res = await fetch("/vacations/" + match.params.id)
             let data = await res.json()
             console.log(data[0])
             setdescrip(data[0].descrip)

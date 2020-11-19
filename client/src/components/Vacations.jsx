@@ -21,12 +21,12 @@ export default function Vacations({ history }) {
     useEffect(() => {
         (async () => {
             if (!user.login || user.role === "admin") {
-                let res = await fetch("https://e6xpl.sse.codesandbox.io/vacations/")
+                let res = await fetch("/vacations/")
                 let data = await res.json()
                 setvacations(data)
             } else if (user.role === "user") {
-                let url = show === "All" ? "https://e6xpl.sse.codesandbox.io/vacations/regular/" : "https://e6xpl.sse.codesandbox.io/vacations/followed/"
-                if (url === "https://e6xpl.sse.codesandbox.io/vacations/regular/") {
+                let url = show === "All" ? "/vacations/regular/" : "/vacations/followed/"
+                if (url === "/vacations/regular/") {
                     setshow("All")
                 }
                 let res = await fetch(url + user.userid, {
